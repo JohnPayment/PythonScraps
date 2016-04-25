@@ -13,6 +13,7 @@ def detectPalindrome(userString):
 
 	# Iterates through string, comparing the 1st value to the last,
 	# the second to the second from last and so on.
+	# Stops at the half-way point to avoid redundant checking.
 	for i in range(0, (length + 1) / 2):
 		if userString[i] == userString[length - (i + 1)]:
 			continue
