@@ -3,17 +3,18 @@
 start = 1
 end = 100
 
-for i in range(start, end):
-    value = ""
-    number = True
+def fizzBuzz():
+	for i in range(start, end + 1):
+	    value = ""
+	    number = True
 
-    if i % 3 == 0:
-        value = "fizz"
-        number = False
+	    if i % 3 == 0:
+	        value = "fizz"
+	        number = False
 
-    if i % 5 == 0:
-        value += "buzz"
-    elif number:
-        value = i
+	    if i % 5 == 0:
+	        value += "buzz"
+	    elif number:
+	        value = i
 
-    print value
+	    print value
