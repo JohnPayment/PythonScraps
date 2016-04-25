@@ -34,6 +34,9 @@ def getStringValue(s):
 
 	return value
 
+# Detects whether one string in an anagram of another by loading each string into
+# a dictionary and comparing the resulting collections.
+# Slower than the Ordinal approach, but does not have issues with edge cases.
 def detectAnagramDict(s1, s2):
 	sdict1 = getCharDictionary(s1)
 	sdict2 = getCharDictionary(s2)
@@ -42,8 +45,12 @@ def detectAnagramDict(s1, s2):
 
 def getCharDictionary(s):
 	dictionary = dict()
+	processedString = s
 
-	for c in s:
+	if ignoreCapitalization:
+		processedString = s.lower()
+
+	for c in processedString:
 		if c.isspace() and ignoreWhitespace:
 			continue
 		if c.isdigit() and ignoreNumbers:
