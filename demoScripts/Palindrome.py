@@ -11,8 +11,10 @@ def detectPalindrome(userString):
 	elif length == 1:
 		return oneCharPalindrome
 
-	for i in range(0, length - 1):
-		if(userString[i] == userString[length - (i + 1)]):
+	# Iterates through string, comparing the 1st value to the last,
+	# the second to the second from last and so on.
+	for i in range(0, (length + 1) / 2):
+		if userString[i] == userString[length - (i + 1)]:
 			continue
 		else:
 			return False
